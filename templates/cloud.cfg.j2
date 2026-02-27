@@ -3,20 +3,20 @@
 users:
   - default
 
-{% if cloudinit_disableroot is defined and cloudinit_disableroot | length %}
-disable_root: {{ cloudinit_disableroot }}
+{% if cloudinit_disableroot is defined and cloudinit_disableroot is boolean %}
+disable_root: {{ cloudinit_disableroot | bool | lower }}
 {% endif %}
 
-{% if cloudinit_preservehostname is defined and cloudinit_preservehostname | length %}
-preserve_hostname: {{ cloudinit_preservehostname }}
+{% if cloudinit_preservehostname is defined and cloudinit_preservehostname is boolean %}
+preserve_hostname: {{ cloudinit_preservehostname | bool | lower }}
 {% endif %}
 
-{% if cloudinit_aptpreservesourceslist is defined and cloudinit_aptpreservesourceslist | length %}
-apt_preserve_sources_list: {{ cloudinit_aptpreservesourceslist }}
+{% if cloudinit_aptpreservesourceslist is defined and cloudinit_aptpreservesourceslist is boolean %}
+apt_preserve_sources_list: {{ cloudinit_aptpreservesourceslist | bool | lower }}
 {% endif %}
 
-{% if cloudinit_ssh_deletekeys is defined and cloudinit_ssh_deletekeys | length %}
-ssh_deletekeys: {{ cloudinit_ssh_deletekeys }} 
+{% if cloudinit_ssh_deletekeys is defined and cloudinit_ssh_deletekeys is boolean %}
+ssh_deletekeys: {{ cloudinit_ssh_deletekeys | bool | lower }} 
 {% endif %}
 
 {% if cloudinit_ssh_genkeytypes is defined and cloudinit_ssh_genkeytypes | length %}
@@ -27,8 +27,8 @@ ssh_genkeytypes: {{ cloudinit_ssh_genkeytypes }}
 syslog_fix_perms: {{ cloudinit_syslog_fix_perms }}
 {% endif %}
 
-{% if cloudinit_disable_vmware_customization is defined and cloudinit_disable_vmware_customization | length %}
-disable_vmware_customization: {{ cloudinit_disable_vmware_customization }}
+{% if cloudinit_disable_vmware_customization is defined and cloudinit_disable_vmware_customization is boolean %}
+disable_vmware_customization: {{ cloudinit_disable_vmware_customization | bool | lower }}
 {% endif %}
 
 {% if cloudinit_cloudinitmodules is defined and cloudinit_cloudinitmodules | length %}
