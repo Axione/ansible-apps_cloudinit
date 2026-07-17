@@ -12,6 +12,7 @@ galaxy_info:
         - "focal"
         - "jammy"
         - "noble"
+        - "resolute"
     - name: "Debian"
       versions:
         - "buster"
@@ -33,5 +34,6 @@ galaxy_info:
     - system
     - boot
     - cloudinit
+    - configure
 
 dependencies: []

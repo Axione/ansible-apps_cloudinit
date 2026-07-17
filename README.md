@@ -22,6 +22,9 @@
 
 Cloudinit install and configuration.
 
+install time = 1/run 18.81s -  2/run 2.57s
+
+
 ## Requirements
 
 none
